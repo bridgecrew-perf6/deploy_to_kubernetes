@@ -29,5 +29,13 @@ pipeline {
                 sh 'docker run --name kuber_app -d -p 8081:80 svdevops07/kuber_app:v0.1'
             }
         }
+
+        stage('Deploy on K8s') {
+            steps {
+                sshagent(['k8s']) {
+                sh ''
+                }
+            }
+        }
     }
 }
