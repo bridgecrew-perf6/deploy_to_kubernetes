@@ -14,8 +14,6 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/svdevops07/deploy_to_kubernetes.git'
-                sh 'pwd'
-                sh 'ls -la'
             }
         }
 
