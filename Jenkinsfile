@@ -7,7 +7,6 @@ pipeline {
             steps {
                 echo 'Deleting workspace'
                 deleteDir()
-                sh 'ls -la'
             }
         }
 
