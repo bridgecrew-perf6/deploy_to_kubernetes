@@ -27,6 +27,8 @@ pipeline {
 
         stage('Docker run') {
             steps {
+                sh 'docker stop kuber_app'
+                sh 'docker rm kuber_app'
                 sh 'docker run --name kuber_app -d -p 8081:80 svdevops07/kuber_app:v0.1'
             }
         }
