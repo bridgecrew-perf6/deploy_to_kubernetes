@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: demo-app-pod
+    labels:
+        name: demo-app-pod
+        app: demo-project-app
+spec:
+    containers:
+        - name: demo-app
+          image: svdevops07/kuber_app:v0.1
+          ports:
+              - containerPort: 80
