@@ -30,11 +30,15 @@ pipeline {
             }
         }
 
-        stage('Deploy on K8s') {
+        stage('Deploying App to Kubernetes') {
             steps {
-                sshagent(['k8s']) {
-                sh ''
+                script{
+                    kubernetesDeploy configs: 'deployment.yml', kubeconfigId: 'k8sconfig']
                 }
+#                sshagent(['k8s']) {
+#                sh ''
+#                kubernetesDeploy(configs: "deployment.yml", kubeconfigId: "kubernetes")
+#                }
             }
         }
     }
