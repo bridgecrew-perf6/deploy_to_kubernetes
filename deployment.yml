@@ -11,15 +11,15 @@ spec:
         matchLabels:
             name: demo-app-pod
             app: demo-project-app
-        template:
-            metadata:
+    template:
+        metadata:
+            name: demo-app-pod
+            labels:
                 name: demo-app-pod
-                labels:
-                    name: demo-app-pod
-                    app: demo-project-app
-            spec:
-                containers:
-                    - name: demo-app
-                      image: svdevops07/kuber_app:v0.1
-                      ports:
-                          - containerPort: 80
+                app: demo-project-app
+        spec:
+            containers:
+                - name: demo-app
+                  image: svdevops07/kuber_app:v0.1
+                  ports:
+                      - containerPort: 80
